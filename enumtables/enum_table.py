@@ -42,7 +42,7 @@ def EnumTable(enum, declBase, name = None, tablename = None, doc = None, **kwarg
 	namespace = {
 		"__tablename__" : tablename if tablename else convert_case(enum.__name__),
 		"__enum__" : enum,
-		"item_id" : sa.Column(sa.String, primary_key = True),
+		"item_id" : sa.Column(sa.String(255), primary_key = True),
 		**kwargs
 	}
 	if doc:

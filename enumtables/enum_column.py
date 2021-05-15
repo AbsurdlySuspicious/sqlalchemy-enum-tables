@@ -9,7 +9,7 @@ def convert_case(name):
     return re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
 
 class EnumType(types.TypeDecorator):
-	impl = types.String
+	impl = types.String(255)
 	def __init__(self, enumTable = None, *args, **kwargs):
 		super().__init__(*args, **kwargs)
 		self.__enum__ = enumTable
